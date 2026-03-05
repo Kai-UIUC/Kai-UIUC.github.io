@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+*~
+
+.ipynb_checkpoints
+.DS_Store
+
+# Jekyll/Bundler local artifacts
+.bundle/
+vendor/
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+## Gemfile.lock
