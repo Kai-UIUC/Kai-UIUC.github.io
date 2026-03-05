@@ -14,7 +14,6 @@ __pycache__/
 # Jekyll/Bundler local artifacts
 .bundle/
 vendor/
-_site/
 .jekyll-cache/
 .jekyll-metadata
 
