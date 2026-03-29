@@ -1,8 +1,8 @@
 ---
-name: Bigfoot Sightings Web Development Homework
+name: Bigfoot Sightings Visualization Project
 tools: [Python, HTML, vega-lite, Altair]
 image: assets/pngs/cars.png
-description: Exploring Bigfoot sightings across different seasons and weather conditions.
+description: An interactive data visualization project exploring seasonal patterns and weather conditions in reported Bigfoot sightings.
 custom_js:
   - vega.min
   - vega-lite.min
@@ -10,9 +10,11 @@ custom_js:
   - justcharts
 ---
 
-# Bigfoot Sightings: Exploring Seasons and Weather
+# Bigfoot Sightings: Seasons, Classification, and Weather
 
-Below are the links to the original dataset and the Jupyter Notebook containing the Python/Altair analysis:
+This project shows how I used Python, Altair, and Vega-Lite to turn a raw sightings dataset into a lightweight web-based visualization. I wanted the final result to do two things well: summarize the dataset clearly and give users one interactive view that rewards exploration.
+
+Below are the links to the original dataset and the notebook I used for the analysis:
 
 <div class="left">
 {% include elements/button.html link="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/bfro_reports_fall2022.csv" text="The Data" %}
@@ -24,11 +26,13 @@ Below are the links to the original dataset and the Jupyter Notebook containing 
 
 <br><br><br>
 
-## Visualization 1: Bigfoot Reports by Season
+## Visualization 1: Reports by Season
 
 <vegachart schema-url="https://kai-uiuc.github.io/assets/json/bigfoot_plot1.json" style="width: 100%"></vegachart>
 
-The first visualization is a bar chart that displays the total number of Bigfoot reports across different seasons, broken down by their report classification. For the design choices, I used a nominal encoding for the x-axis (`season`) and a quantitative encoding for the y-axis (count of reports). I chose to color the bars by `classification` (a nominal variable) using Altair's default categorical color scheme, which provides distinct, easily distinguishable hues for the qualitative categories (Class A, B, and C). On the analysis and data transformation side in Python, since the dataset exceeds Altair's default 5,000-row limit, I applied `alt.data_transformers.disable_max_rows()`. To keep the exported JSON lightweight and adhere to GitHub's hosting limits, I passed the raw CSV URL directly into the chart rather than a Pandas DataFrame, relying on Altair's built-in `count()` aggregation to process the data dynamically.
+I started with a grouped bar chart to answer the most basic question first: when are sightings reported most often, and how does that differ by classification? I mapped `season` to the x-axis, used the count of records on the y-axis, and colored each bar by `classification` so the different report types stay easy to compare.
+
+On the implementation side, I built the chart in Altair and kept the output web-friendly by pointing the visualization directly to the source CSV instead of embedding a large processed table. Because the dataset is larger than Altair's default row limit, I disabled the max-row restriction during development and relied on Vega-Lite's built-in aggregation for the final chart.
 
 <br>
 
@@ -36,4 +40,6 @@ The first visualization is a bar chart that displays the total number of Bigfoot
 
 <vegachart schema-url="https://kai-uiuc.github.io/assets/json/bigfoot_plot2.json" style="width: 100%"></vegachart>
 
-The second visualization is a scatter plot exploring the weather conditions—specifically Average Temperature and Humidity—present during these sightings. I used quantitative encodings for both the x-axis (`temperature_mid`) and y-axis (`humidity`), and again mapped the `classification` to color. To address potential overplotting, I adjusted the mark opacity to 0.6. For the interactivity component, I implemented a dropdown selection tool bound to the `season` variable. When a specific season is selected, the non-matching points dynamically fade to light gray. This conditional color encoding makes the visualization significantly more clear and interesting, as it allows users to isolate and observe seasonal weather patterns without losing the visual context of the overall dataset. Additionally, I included detailed tooltips showing geographic locations and exact weather metrics to support deeper user exploration.
+For the second view, I moved from summary to exploration. This scatter plot compares `temperature_mid` and `humidity` to show the weather conditions associated with reported sightings. I kept the color encoding on `classification` for consistency across the page and lowered the point opacity to reduce overplotting.
+
+The main interaction is a season dropdown. When a user selects a season, matching points stay highlighted while the rest fade into the background. That interaction makes it easier to compare seasonal clusters without losing context. I also added tooltips for state, county, season, temperature, and humidity so the chart can support both quick scanning and closer inspection.

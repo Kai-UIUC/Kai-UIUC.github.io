@@ -1,0 +1,41 @@
+{
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "data": {"url": "https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/bfro_reports_fall2022.csv"},
+  "mark": {"type": "circle", "opacity": 0.6, "size": 50},
+  "encoding": {
+    "color": {
+      "condition": {
+        "selection": "season_select",
+        "field": "classification",
+        "title": "Classification",
+        "type": "nominal"
+      },
+      "value": "lightgray"
+    },
+    "tooltip": [
+      {"field": "state", "type": "nominal"},
+      {"field": "county", "type": "nominal"},
+      {"field": "temperature_mid", "type": "quantitative"},
+      {"field": "humidity", "type": "quantitative"},
+      {"field": "season", "type": "nominal"}
+    ],
+    "x": {"field": "temperature_mid", "title": "Average Temperature", "type": "quantitative"},
+    "y": {"field": "humidity", "title": "Humidity", "type": "quantitative"}
+  },
+  "height": 400,
+  "selection": {
+    "season_select": {
+      "type": "single",
+      "fields": ["season"],
+      "bind": {
+        "input": "select",
+        "options": [null, "Spring", "Summer", "Fall", "Winter"],
+        "labels": ["All Seasons", "Spring", "Summer", "Fall", "Winter"],
+        "name": "Select Season: "
+      }
+    }
+  },
+  "title": "Weather Conditions During Bigfoot Sightings",
+  "width": 500,
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"
+}

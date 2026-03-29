@@ -1,37 +1,27 @@
 ---
-title: The Hello World of Blogs
-tags: [Technology, Blogging]
+title: Launching This Portfolio Site
+tags: [Portfolio, Web Development]
 style: fill
 color: secondary
-description: This is a blog post to get you started.
+description: Notes on turning a template site into my own portfolio.
 ---
 
-Source: [portfolYOU](https://github.com/YoussefRaafatNasry/portfolYOU)
+This site started as a Jekyll template, but the main work was not the setup itself. The real work was deciding what to keep, what to remove, and how to make the site reflect my own projects instead of the default sample content.
 
-This is me writing an intro to this blog post.  So introlicioius.
+I used this portfolio as a place to practice two skills at the same time:
 
-## 1. Here is one thing I want to say
+## 1. Technical cleanup
 
-This is maybe an important thing, and, at the very least it is first.
+Templates are useful for speed, but they usually come with placeholder pages, sample posts, and filler descriptions. One part of the process was replacing those defaults with content that actually matched my work and interests.
 
-## 2. Another thing
+## 2. Presenting projects clearly
 
-I am now talking about a second thing, probably also good.
+I want each project page to do more than just show a chart or a screenshot. It should explain the problem, the tools I used, and the decisions that shaped the final result.
 
-## 3. A third thing
+## 3. Shipping to the web
 
-We are now getting into the weeds of things that I am saying.  It is probably unlikely someone has made it thus far.
+Publishing through GitHub Pages forces me to think about lightweight assets, stable links, and what a project looks like once it leaves the notebook and becomes a public page.
 
-## 4. Thing #4.
+## 4. What comes next
 
-At this point, you are probably no longer into me listing off things.  Let's put in an image to placate the reader:
-
-![This is an image of a corgi.](https://media.istockphoto.com/photos/welsh-corgi-picture-id962032196?k=20&m=962032196&s=170667a&w=0&h=NhIyQdJgVw0cw_EeLtP3LcLExLuiAWPwzL6_WsRKUfQ=)
-
-## 5. The last thing
-
-This is my final thing, probably would be great if this was a TL;DR or summary.  But I don't have that for you.  I have given you so little already, why start saying anything useful now?
-
-Besides, all anybody wants is the DERP:
-
-![This is an image of three corgis looking 'derpy', or with silly faces.](http://3.bp.blogspot.com/-AXnXOPZgqMk/Un-xCBAa4gI/AAAAAAAAsWA/z_lZsvDoCRk/s1600/derpstages.jpg)
+As I add more work, I want this site to become a compact record of what I build, how I think, and how I communicate technical decisions.
