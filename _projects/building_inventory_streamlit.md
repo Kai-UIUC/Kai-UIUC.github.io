@@ -14,7 +14,7 @@ This project is a Streamlit web app hosted on HuggingFace Spaces that explores t
 </div>
 
 <div class="right">
-{% include elements/button.html link="YOUR_HUGGINGFACE_SPACE_URL_HERE" text="Open Streamlit App" %}
+{% include elements/button.html link="https://huggingface.co/spaces/0xkxx/is445-building-inventory" text="Open Streamlit App" %}
 </div>
 
 <br><br><br>
